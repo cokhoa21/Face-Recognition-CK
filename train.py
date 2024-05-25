@@ -22,11 +22,13 @@ args = vars(ap.parse_args())
 # load face embeddings
 print("[INFO] loading face embeddings...")
 data = pickle.loads(open(args["embeddings"], "rb").read())
-
+# print(data["embeddings"])
+# print(data["names"])
 # encode the labels
 print("[INFO] encoding labels...")
 le = LabelEncoder()
 labels = le.fit_transform(data["names"])
+# print(labels)
 
 # chia tập data thành 80% tập train và 20% tập test
 (trainX, testX, trainY, testY) = train_test_split(data["embeddings"], labels,

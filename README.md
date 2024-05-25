@@ -15,6 +15,10 @@
     python train.py --embeddings output/embeddings.pickle --recognizer output/recognizer.pickle --le output/le.pickle
 
 4. Demo 
-    # Demo web
-    python web.py
+    # Demo image
+    python recognize_image.py --embedding-model openface_nn4.small2.v1.t7 --recognizer output/recognizer.pickle --le output/le.pickle --image test_images/khoa3.png
+    # Demo webcam
+    python recognize_webcam.py --embedding-model openface_nn4.small2.v1.t7 --recognizer output/recognizer.pickle --le output/le.pickle
+    # Demo video
+    Updating ...
     
