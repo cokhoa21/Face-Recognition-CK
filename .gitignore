@@ -145,3 +145,5 @@ developing/
 *.npy
 *.pth
 .vscode/
+
+.DS_Store

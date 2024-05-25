@@ -8,22 +8,13 @@
     # Install with Pip
     pip install -r requirements.txt
 
-    ```
-1. Detection & Capturing:
-    ```bash
-    # Face Detection:
-    python face_detect.py
-    
-    # Face Capturing (Remember to input your name FIRST in console):
-    python face_capture.py
+2. Update faces after adding face to data folder
+    python update_faces.py --dataset data/ --embeddings output/embeddings.pickle --embedding-model openface_nn4.small2.v1.t7
 
-    ```
-1. Create FaceList and Recognition:
-    ```bash
-    # Update FaceList:
-    python update_faces.py
-    
-    # Face Recognition:
-    python face_recognition.py
+3. Train with new output embeddings
+    python train.py --embeddings output/embeddings.pickle --recognizer output/recognizer.pickle --le output/le.pickle
 
-    ```
+4. Demo 
+    # Demo web
+    python web.py
+    
