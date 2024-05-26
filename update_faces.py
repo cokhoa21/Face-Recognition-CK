@@ -43,6 +43,7 @@ knownEmbeddings = []
 knownNames = []
 # khoi tao tong so face da xu li
 total = 0
+knownTotal = []
 
 # Doc file anh va xu li
 for (i, imagePath) in enumerate(imagePaths):
@@ -92,12 +93,15 @@ for (i, imagePath) in enumerate(imagePaths):
             vec = embedder.forward()
             # them name va face embedding tuong ung vao cac list da khoi tao
             knownNames.append(name)
+            if(knownNames[total] != knownNames[total-1]):
+                print(knownNames[total-1], total)
             knownEmbeddings.append(vec.flatten())
             total += 1
 
 # luu lai face embeddings va name ra file
 print("[INFO] serializing {} encodings...".format(total))
 data = {"embeddings": knownEmbeddings, "names": knownNames}
+print(data)
 f = open(args["embeddings"], "wb")
 f.write(pickle.dumps(data))
 f.close()
